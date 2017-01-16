@@ -17,36 +17,46 @@
 	<meta></meta>
 	<title>Tip Calculator</title>
 </head>
+<style>
+	.input-group{max-width: 50%}
+	div, button{margin:20px; }
+	#tip,#total{display:inline;}
+	.well{background:#51D6B9; color:#FFF; font-weight:bold; font-size: 1.35em; font-family: arial; border-color:#43B298;}
+</style>
 
 <body >
+<div class="container">
 	<h1>Tip Calculator</h1>
+
+	<div class="input-group">
+		<span class="input-group-addon" >$</span>
+		<input class="form-control" id="subTotal" placeholder="Total Before Tip" type="" >
+	</div>
+	<div class="input-group">
+		<span class="input-group-addon">%</span>
+		<input class="form-control" id="tipPercent" placeholder="Tip Percentage" type="" step="any">
+	</div>
+	<button class="btn btn-default" onclick="calculate()">Calculate</button>
 	
-	<input id="subTotal" placeholder="Total Before Tip" type="number" >
-	<input id="tipPercent" placeholder="Tip Percentage (Decimal)" type="number" step="any">
-
-	<button onclick="calculate()">Calculate</button>
-
 	<div id="tip"></div><div id="total"></div>
-	<div id ="error"></div>
-	
+	<!-- error messgae not working -->
+	<!-- <div id ="error"></div> -->
+</div>	
 <script>
-
   	function calculate(){
 
 	  	subTotal = parseFloat(document.getElementById('subTotal').value);
-	  	tipPercent = parseFloat(document.getElementById('tipPercent').value);
-
-	  	if(subTotal === NaN|tipPercent === NaN){
-	  		$('#error').html('Invalid');
-	  	} else{
-	  		$('#tip').html("Tip: " + parseFloat(subTotal*tipPercent));
-	  		$('#total').html("Total: " + parseFloat(subTotal + (subTotal*tipPercent)));
-	  	}
+	  	tipPercent = parseFloat((document.getElementById('tipPercent').value)/100);
+	  	  	
+	    $('#tip').html('<span class="well">Tip: $' + Math.round(parseFloat(subTotal*tipPercent)*100)/100 + '</span>');
+	    						    			   
+	  	$('#total').html('<span class="well">Total: $' + Math.round(parseFloat(subTotal + (subTotal*tipPercent))*100)/100 + '</span>');	   
   	}
+  	//error messgae not working
+  	// if(subTotal === NaN|tipPercent === NaN){
+	  // 		$('#error').html('Invalid');
+	  // 	}
 	
-	// tip=tipPercent*subTotal;
-	// total = tip+ subTotal;
-	// alert('Tip is ' + tip + ' Total is ' + total );
 </script>
 </body>
 </html>
