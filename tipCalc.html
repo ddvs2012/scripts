@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<script type='text/javascript' src="scripts/scripts.js" async></script>
+	
+<!-- bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- font awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- jQuery -->
+	<script
+			  src="https://code.jquery.com/jquery-2.2.4.min.js"
+			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+			  crossorigin="anonymous" ></script>
+	
+	
+	<meta></meta>
+	<title>Tip Calculator</title>
+</head>
+
+<body >
+	<h1>Tip Calculator</h1>
+	
+	<input id="subTotal" placeholder="Total Before Tip" type="number" >
+	<input id="tipPercent" placeholder="Tip Percentage (Decimal)" type="number" step="any">
+
+	<button onclick="calculate()">Calculate</button>
+
+	<div id="tip"></div><div id="total"></div>
+	<div id ="error"></div>
+	
+<script>
+
+  	function calculate(){
+
+	  	subTotal = parseFloat(document.getElementById('subTotal').value);
+	  	tipPercent = parseFloat(document.getElementById('tipPercent').value);
+
+	  	if(subTotal === NaN|tipPercent === NaN){
+	  		$('#error').html('Invalid');
+	  	} else{
+	  		$('#tip').html("Tip: " + parseFloat(subTotal*tipPercent));
+	  		$('#total').html("Total: " + parseFloat(subTotal + (subTotal*tipPercent)));
+	  	}
+  	}
+	
+	// tip=tipPercent*subTotal;
+	// total = tip+ subTotal;
+	// alert('Tip is ' + tip + ' Total is ' + total );
+</script>
+</body>
+</html>
