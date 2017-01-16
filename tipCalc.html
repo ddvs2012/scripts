@@ -17,9 +17,9 @@
 	<meta></meta>
 	<title>Tip Calculator</title>
 </head>
-<style>
-	.input-group{max-width: 50%}
-	div, button{margin:20px; }
+<style>	
+	div,button{margin:15px; }
+	.input-group{max-width: 50%;}	
 	#tip,#total{display:inline;}
 	.well{background:#51D6B9; color:#FFF; font-weight:bold; font-size: 1.35em; font-family: arial; border-color:#43B298;}
 </style>
@@ -43,6 +43,12 @@
 	<!-- <div id ="error"></div> -->
 </div>	
 <script>
+	function init() {
+	    // Clear forms here
+	    document.getElementById("subTotal").value = "";
+	    document.getElementById("tipPercent").value = "";
+	}
+	window.onload = init;
   	function calculate(){
 
 	  	subTotal = parseFloat(document.getElementById('subTotal').value);
