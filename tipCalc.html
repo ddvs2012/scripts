@@ -36,7 +36,7 @@
 		<span class="input-group-addon">%</span>
 		<input class="form-control" id="tipPercent" placeholder="Tip Percentage" type="" step="any">
 	</div>
-	<button class="btn btn-default" onclick="calculate()">Calculate</button>
+	<button class="btn btn-info" onclick="calculate()">Calculate</button>
 	
 	<div id="tip"></div><div id="total"></div>
 	<!-- error messgae not working -->
@@ -48,9 +48,9 @@
 	  	subTotal = parseFloat(document.getElementById('subTotal').value);
 	  	tipPercent = parseFloat((document.getElementById('tipPercent').value)/100);
 	  	  	
-	    $('#tip').html('<span class="well">Tip: $' + Math.round(parseFloat(subTotal*tipPercent)*100)/100 + '</span>');
+	    $('#tip').html('<span class="well">Tip: $' + (Math.round(parseFloat(subTotal*tipPercent)*100)/100).toFixed(2) + '</span>');
 	    						    			   
-	  	$('#total').html('<span class="well">Total: $' + Math.round(parseFloat(subTotal + (subTotal*tipPercent))*100)/100 + '</span>');	   
+	  	$('#total').html('<span class="well">Total: $' + (Math.round(parseFloat(subTotal + (subTotal*tipPercent))*100)/100).toFixed(2) + '</span>');	   
   	}
   	//error messgae not working
   	// if(subTotal === NaN|tipPercent === NaN){
