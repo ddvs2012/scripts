@@ -18,10 +18,11 @@
 	<title>Tip Calculator</title>
 </head>
 <style>	
-	div,button{margin:15px; }
-	.input-group{max-width: 50%;}	
-	#tip,#total{display:inline;}
-	.well{background:#51D6B9; color:#FFF; font-weight:bold; font-size: 1.35em; font-family: arial; border-color:#43B298;}
+	div{margin:15px; }
+	.input-group{max-width: 29%;}	
+	#tip,#total{display:inline; margin:2 2 2 2 ;}
+	button{margin-left:15px;}
+	.well{background:#51D6B9; color:#FFF; font-size: 1.1em; font-family: arial; border-color:#43B298;padding:12px; }
 </style>
 
 <body >
@@ -36,7 +37,7 @@
 		<span class="input-group-addon">%</span>
 		<input class="form-control" id="tipPercent" placeholder="Tip Percentage" type="" step="any">
 	</div>
-	<button class="btn btn-info" onclick="calculate()">Calculate</button>
+	<button class="btn btn-info btn-lg" onclick="calculate()">Calculate</button>
 	
 	<div id="tip"></div><div id="total"></div>
 	<!-- error messgae not working -->
