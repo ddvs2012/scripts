@@ -78,7 +78,7 @@ if((end[0]-start[0]<1)||(end[0]-start[0]===1 && end[1] < start[1])||(end[0]-star
   startDate = monthStart + dayStart + yearStart;
   endDate = monthEnd + dayEnd + yearEnd;
   
-  if(startDate === endDate +){
+  if(startDate === endDate + yearStart){
     result.push(startDate);
   } else {
     result.push(startDate,endDate);
