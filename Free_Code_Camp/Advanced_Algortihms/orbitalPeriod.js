@@ -19,6 +19,15 @@ function orbitalPeriod(arr) {
  
   return result;
 //   Math.round(T)
-}
+};
 
-console.log(orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}]));
+console.log(13);
+console.log(JSON.stringify(orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}])));
+  
+
+//mayeux's sol
+// return arr.reduce(function(a,b){
+//     var orbitalPeriod = Math.round((2*Math.PI)*Math.pow((Math.pow(b.avgAlt+earthRadius,3))/GM,0.5));
+//     a.push({name: b.name, orbitalPeriod : orbitalPeriod});
+//     return a;
+//   },[]);
